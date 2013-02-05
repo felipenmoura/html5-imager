@@ -265,8 +265,8 @@ $(document).ready(function(){
         if(!evt)
             return false;
         
-        var x= evt.originalEvent? evt.originalEvent.offsetX: evt[0],
-            y= evt.originalEvent? evt.originalEvent.offsetY: evt[1],
+        var x= evt.originalEvent? (evt.originalEvent.offsetX||evt.originalEvent.layerX): evt[0],
+            y= evt.originalEvent? (evt.originalEvent.offsetY||evt.originalEvent.layerY): evt[1],
             data= null,
             precision= _conf.precision,
             dataAttr= '',
@@ -290,10 +290,11 @@ $(document).ready(function(){
             y= _canvas.height - 2;
         }
         
-        x-= precision/2;
-        y-= precision/2;
+        x-= (precision/2);
+        y-= (precision/2);
         
-        data= _ctx.getImageData(x, y, precision, precision).data;
+        data= _ctx.getImageData(x, y, precision, precision);
+        data= data.data;
         _conf.curPixel= _ctx.getImageData(x, y, 1, 1).data;
         pickedColorString= 'rgba('+_conf.curPixel[0]+', '+_conf.curPixel[1]+', '+_conf.curPixel[2]+', '+_conf.curPixel[3]+')';
         _pickedColor.val(pickedColorString);
