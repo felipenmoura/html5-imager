@@ -264,11 +264,13 @@ $(document).ready(function(){
         if(!_canvasImgData)
             return false;
 
+        /* this turns out not to be a good feature
         if(_conf.loading){
             clearTimeout(_scheduled);
             _scheduled= setTimeout(_applyEffect, 400);
             return false;
         }
+        */
         
         _setLoading(true);
         
