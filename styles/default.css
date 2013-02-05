@@ -173,3 +173,14 @@ canvas.withBG{
 #selectedPx div:hover{
     outline: solid 1px red;
 }
+
+#youtubeVideo{
+    display: none;
+    margin-top: 10px;
+}
+
+@media screen and (min-height: 650px){
+    #youtubeVideo{
+        display: block;
+    }
+}
