@@ -9,6 +9,7 @@ HTML, BODY{
 body{
     background-color: #444;
     font-size: 11px;
+    overflow: hidden;
 }
 
 #images-list{
@@ -66,7 +67,7 @@ body{
     z-index: 2;
 }
 #edited-image{
-    position: fixed;
+    position: relative;
     overflow: auto;
     left: 250px;
     width: 100%;
@@ -78,10 +79,15 @@ body{
     margin-left: 3px;
     top: -5px;
 }
+.github-link img{
+    width: 24px;
+    border-radius: 2px;
+    border: solid 1px #d0d0d0;
+    
+}
 canvas{
     position: relative;
-    margin-left: 10px;
-    margin-top: 10px;
+    z-index: 2;
 }
 canvas.withBG{
     background-image: url(../images/bg.png) !IMPORTANT;
@@ -91,7 +97,18 @@ canvas.withBG{
     background-image: url(../images/colors.png) !IMPORTANT;
     background-size: 100% 100%;
 }
-.loading{
+#loadingEl{
+    position: absolute;
+    z-index: 999;
+    left: 265px;
+    top: 85px;
+    width: 18px;
+    height: 18px;
+    border: solid 1px black;
+    border-radius: 50%;
+    display: none;
+}
+#loadingEl, .loading{
     background-image: url(../images/loading.gif) !IMPORTANT;
     background-repeat: no-repeat;
 }
