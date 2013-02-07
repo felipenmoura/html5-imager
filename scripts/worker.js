@@ -41,10 +41,10 @@ function applyEffect(cData){
               ){
                 frame.data[i*4+3]= alpha;
             }else{
-                frame.data[i*4+3]= 255;
+                //frame.data[i*4+3]= frame.data[i*4+3];
             }
         }else{
-            frame.data[i*4+3]= 255;
+            //frame.data[i*4+3]= frame.data[i*4+3];
         }
     }
     return frame;

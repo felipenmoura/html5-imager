@@ -179,7 +179,7 @@ canvas.withBG{
     margin-top: 10px;
 }
 
-@media screen and (min-height: 650px){
+@media screen and (min-height: 630px){
     #youtubeVideo{
         display: block;
     }
